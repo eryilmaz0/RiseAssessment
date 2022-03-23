@@ -22,7 +22,7 @@ public class ContactInformationService : IContactInformationService
         var enrollee = await _enrolleeRepository.Find(x => x.Id == request.EnrolleeId);
 
         if (enrollee is null)
-            return new() { IsSuccess = false};
+            return new() { IsSuccess = false, ResultMessage = "Enrollee Not Found."};
 
         ContactInformation newInformation = new()
         {
@@ -34,9 +34,9 @@ public class ContactInformationService : IContactInformationService
         var result = await _contactInformationRepository.Insert(newInformation);
 
         if (!result)
-            return new() { IsSuccess = false};
+            return new() { IsSuccess = false, ResultMessage = "Contact Informatıon Not Inserted."};
 
-        return new() { IsSuccess = true };
+        return new() { IsSuccess = true , ResultMessage = "Contact Information Created Successfully.", CreatedContactInformationId = newInformation.Id};
 
 
     }

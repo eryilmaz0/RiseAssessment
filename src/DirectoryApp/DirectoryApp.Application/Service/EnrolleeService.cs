@@ -36,12 +36,12 @@ public class EnrolleeService : IEnrolleeService
         var result = await _enrolleeRepository.Insert(newEnrollee);
 
         if (!result)
-            return new() { IsSuccess = false };
+            return new() { IsSuccess = false, ResultMessage = "Enrollee Not Created."};
 
 
         //Breaking Cache
-        await _cache.RemoveFromCacheAsync("enrollee");      
-        return new() { CreatedEnrolleeId = newEnrollee.Id };
+        await _cache.RemoveFromCacheAsync("enrollees");      
+        return new() { IsSuccess = true, ResultMessage = "Enrollee Created Successfully." ,CreatedEnrolleeId = newEnrollee.Id };
     }
 
 
@@ -56,6 +56,7 @@ public class EnrolleeService : IEnrolleeService
         enrollee.Name = request.Name;
         enrollee.LastName = request.LastName;
         enrollee.Firm = request.Firm;
+        enrollee.Created = enrollee.Created.ToUniversalTime();
 
         var result = await _enrolleeRepository.Update(enrollee);
 
@@ -64,7 +65,7 @@ public class EnrolleeService : IEnrolleeService
 
 
         //Breaking Cache
-        await _cache.RemoveFromCacheAsync("enrollee");
+        await _cache.RemoveFromCacheAsync("enrollees");
         await _cache.RemoveFromCacheAsync($"enrollee_{enrollee.Id}");
         return new() { IsSuccess = true, ResultMessage = "Enrolle Updated Successfully." };
     }
@@ -84,6 +85,8 @@ public class EnrolleeService : IEnrolleeService
         if (!result)
             return new() { IsSuccess = false, ResultMessage = "Enrollee Not Deleted." };
 
+        await _cache.RemoveFromCacheAsync("enrollees");
+        await _cache.RemoveFromCacheAsync($"enrollee_{request.EnrolleeId}");
         return new() { IsSuccess = true, ResultMessage = "Enrolle Deleted Successfully." };
     }
 

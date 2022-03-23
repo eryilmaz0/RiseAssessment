@@ -6,7 +6,7 @@ namespace DirectoryApp.Application;
 
 public static class ServiceRegistrator
 {
-    public static void RegisterPersistenceServices(this IServiceCollection serviceCollection)
+    public static void RegisterApplicationServices(this IServiceCollection serviceCollection)
     {
         var assm = Assembly.GetExecutingAssembly();
 

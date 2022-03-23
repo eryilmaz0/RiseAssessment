@@ -16,7 +16,7 @@ namespace DirectoryApp.Domain.Entity
 
         public Entity()
         {
-            this.Created = DateTime.Now;
+            this.Created = DateTime.UtcNow;
             this.IsActive = true;
         }
     }

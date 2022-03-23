@@ -12,9 +12,9 @@ public class RedisCache : ICache
     private IConnectionMultiplexer _connection;
     private IDatabase _database;
 
-    public RedisCache(IOptions<RedisConfiguration> config)
+    public RedisCache(RedisConfiguration config)
     {
-        _config = config.Value;
+        _config = config;
         StartConnection();
     }
 
@@ -25,7 +25,6 @@ public class RedisCache : ICache
         {
             EndPoints = { _config.Host, _config.Port },
             DefaultDatabase = _config.DatabaseIndex,
-            Password = _config.Password,
         };
 
         try
