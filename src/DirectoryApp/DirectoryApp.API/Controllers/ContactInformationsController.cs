@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace DirectoryApp.API.Controllers
 {
@@ -7,5 +8,6 @@ namespace DirectoryApp.API.Controllers
     [ApiController]
     public class ContactInformationsController : ControllerBase
     {
+        
     }
 }
