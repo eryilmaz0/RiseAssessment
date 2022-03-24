@@ -14,7 +14,7 @@ public class ReportService : IReportService
 
     public async Task<GenerateReportResponse> Handle(GenerateReportCommand request, CancellationToken cancellationToken)
     {
-        await _messageSender.SendGenerateReportMessage();
+        await _messageSender.SendGenerateReportMessage(new Object());
         return new() { IsSuccess = true, ResultMessage = "Location Report Started to be Created." };
     }
 }

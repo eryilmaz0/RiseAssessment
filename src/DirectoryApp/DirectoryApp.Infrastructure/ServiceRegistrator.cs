@@ -19,6 +19,18 @@ public static class ServiceRegistrator
             return redisCache;
         });
 
+        serviceCollection.AddSingleton<IMessageSender>(serviceProvider =>
+        {
+            var rabbitMQConfig = serviceProvider.GetRequiredService<IOptions<RabbitMQConfiguration>>().Value;
+            var messageSender = new RabbitMQMessageSender(rabbitMQConfig);
+
+            //İnitializing connection, exchanges and queues
+            messageSender.InitializeConnection(rabbitMQConfig);
+            messageSender.InitializeExchangesAndQueues(rabbitMQConfig);
+
+            return messageSender;
+        });
+
         serviceCollection.AddSingleton<IMessageSender, RabbitMQMessageSender>();
     }
 }

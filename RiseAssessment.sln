@@ -9,17 +9,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DirectoryApp", "DirectoryAp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReportGenerator", "ReportGenerator", "{21E5AB48-2CD1-4334-8547-1A4C4242BA76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectoryApp.Domain", "src\DirectoryApp\DirectoryApp.Domain\DirectoryApp.Domain.csproj", "{D7AD0484-F49E-4C6D-8A1A-2A8474CB608A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectoryApp.Domain", "src\DirectoryApp\DirectoryApp.Domain\DirectoryApp.Domain.csproj", "{D7AD0484-F49E-4C6D-8A1A-2A8474CB608A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectoryApp.Application", "src\DirectoryApp\DirectoryApp.Application\DirectoryApp.Application.csproj", "{D09CF8F4-1765-404A-BD50-B9A0A04E438F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectoryApp.Application", "src\DirectoryApp\DirectoryApp.Application\DirectoryApp.Application.csproj", "{D09CF8F4-1765-404A-BD50-B9A0A04E438F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectoryApp.Infrastructure", "src\DirectoryApp\DirectoryApp.Infrastructure\DirectoryApp.Infrastructure.csproj", "{EECA174C-24E1-4A04-B905-3BCC0CA9527D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectoryApp.Infrastructure", "src\DirectoryApp\DirectoryApp.Infrastructure\DirectoryApp.Infrastructure.csproj", "{EECA174C-24E1-4A04-B905-3BCC0CA9527D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectoryApp.Persistence", "src\DirectoryApp\DirectoryApp.Persistence\DirectoryApp.Persistence.csproj", "{E0793E89-2D28-44F6-88A4-7577BC38E83B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectoryApp.Persistence", "src\DirectoryApp\DirectoryApp.Persistence\DirectoryApp.Persistence.csproj", "{E0793E89-2D28-44F6-88A4-7577BC38E83B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportGenerator", "src\ReportGenerator\ReportGenerator\ReportGenerator.csproj", "{E8B610A9-3556-4070-9E1B-A978859BE2CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectoryApp.API", "src\DirectoryApp\DirectoryApp.API\DirectoryApp.API.csproj", "{5638CE4C-8EFF-4B5A-9F24-F54C371EAA22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectoryApp.API", "src\DirectoryApp\DirectoryApp.API\DirectoryApp.API.csproj", "{5638CE4C-8EFF-4B5A-9F24-F54C371EAA22}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportGenerator", "src\ReportGenerator\ReportGenerator\ReportGenerator.csproj", "{55102F25-0FEB-46BD-B251-E2A93A3FD0A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,14 +43,14 @@ Global
 		{E0793E89-2D28-44F6-88A4-7577BC38E83B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0793E89-2D28-44F6-88A4-7577BC38E83B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0793E89-2D28-44F6-88A4-7577BC38E83B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E8B610A9-3556-4070-9E1B-A978859BE2CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E8B610A9-3556-4070-9E1B-A978859BE2CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E8B610A9-3556-4070-9E1B-A978859BE2CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E8B610A9-3556-4070-9E1B-A978859BE2CF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5638CE4C-8EFF-4B5A-9F24-F54C371EAA22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5638CE4C-8EFF-4B5A-9F24-F54C371EAA22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5638CE4C-8EFF-4B5A-9F24-F54C371EAA22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5638CE4C-8EFF-4B5A-9F24-F54C371EAA22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55102F25-0FEB-46BD-B251-E2A93A3FD0A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55102F25-0FEB-46BD-B251-E2A93A3FD0A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55102F25-0FEB-46BD-B251-E2A93A3FD0A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55102F25-0FEB-46BD-B251-E2A93A3FD0A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,8 +62,8 @@ Global
 		{D09CF8F4-1765-404A-BD50-B9A0A04E438F} = {F26CAA23-E9B6-49B6-82C1-6EA866314FF9}
 		{EECA174C-24E1-4A04-B905-3BCC0CA9527D} = {F26CAA23-E9B6-49B6-82C1-6EA866314FF9}
 		{E0793E89-2D28-44F6-88A4-7577BC38E83B} = {F26CAA23-E9B6-49B6-82C1-6EA866314FF9}
-		{E8B610A9-3556-4070-9E1B-A978859BE2CF} = {21E5AB48-2CD1-4334-8547-1A4C4242BA76}
 		{5638CE4C-8EFF-4B5A-9F24-F54C371EAA22} = {F26CAA23-E9B6-49B6-82C1-6EA866314FF9}
+		{55102F25-0FEB-46BD-B251-E2A93A3FD0A3} = {21E5AB48-2CD1-4334-8547-1A4C4242BA76}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {316E9C0F-2425-4527-ADF1-B631F6E03547}
