@@ -12,6 +12,7 @@ namespace DirectoryApp.Domain.Entity
         public string LastName { get; set; }
         public string Firm { get; set; }
 
+
         public virtual ICollection<ContactInformation> ContactInformations { get; set; }
 
         public Enrollee()
