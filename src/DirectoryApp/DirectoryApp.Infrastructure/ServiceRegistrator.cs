@@ -30,7 +30,5 @@ public static class ServiceRegistrator
 
             return messageSender;
         });
-
-        serviceCollection.AddSingleton<IMessageSender, RabbitMQMessageSender>();
     }
 }

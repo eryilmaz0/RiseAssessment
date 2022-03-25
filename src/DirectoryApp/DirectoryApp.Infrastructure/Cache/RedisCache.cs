@@ -34,7 +34,7 @@ public class RedisCache : ICache
         }
         catch (Exception)
         {
-            throw new ApplicationException("Could not connect to redis.");
+            throw;
         }
     }
 

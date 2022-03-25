@@ -38,7 +38,7 @@ public class RabbitMQMessageSender : IMessageSender
         try
         {
             byte[] message = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(@object));
-            _channel.BasicPublish(exchange: _config.ExchangeName, routingKey: "generate-report-routekey", basicProperties: publishOptions, body : message);
+            _channel.BasicPublish(exchange: _config.ExchangeName, routingKey: "bindkey", basicProperties: publishOptions, body : message);
             return Task.FromResult<bool>(true);
         }
         catch (Exception ex)
@@ -64,7 +64,7 @@ public class RabbitMQMessageSender : IMessageSender
     {
         _channel.ExchangeDeclare(exchange: config.ExchangeName, type: ExchangeType.Direct, durable: true, autoDelete: false);
         _channel.QueueDeclare(queue: config.QueueName, durable: true, exclusive: false, autoDelete: false);
-        _channel.QueueBind(queue: config.QueueName, exchange: config.ExchangeName, routingKey: config.QueueName);
+        _channel.QueueBind(queue: config.QueueName, exchange: config.ExchangeName, routingKey: config.QueueBindKey);
     }
 
 
