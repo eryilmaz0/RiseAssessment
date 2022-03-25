@@ -3,7 +3,7 @@
 This is Rise Technology Assessment Project. You can check below for the project infrastructure and more information. 
 
 ## Domain
-The project has a basic directory domain. There are two projects that Directory Application and ReportGenerator. Directory application presents basic directory transactions. And Report generator project is responsible for creating excel reports. You can see more information about project down below.
+The project has a basic directory application domain. There are two projects that Directory Application and ReportGenerator. Directory application responsible for directory application transactions. And Report generator project is responsible for creating excel reports. You can see more information about project down below.
 
 ## Directory Application
 Directory application is responsible for enrollee transactions such as create, update, delete and fetch. Also it is responsible for contact information transactions what informations can be added to enrollees.
