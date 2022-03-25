@@ -53,31 +53,12 @@ public class GenerateReportService
 
         //Creating Excel
         string name = $"{DateTime.Now.ToString("dd.mm.yyyy-HH.mm")}.LocationReport.xlsx";
-        var workbook = new XLWorkbook();     //creates the workbook
-        var wsDetailedData = workbook.AddWorksheet("data"); //creates the worksheet with sheetname 'data'
-        wsDetailedData.Cell(1, 1).InsertTable(locationReportList.OrderByDescending(x => x.ActiveLocationCount)); //inserts the data to cell A1 including default column name
-        workbook.SaveAs($"Reports/{name}"); //saves the workbook
+        var workbook = new XLWorkbook();     
+        var wsDetailedData = workbook.AddWorksheet("data"); 
+        wsDetailedData.Cell(1, 1).InsertTable(locationReportList.OrderByDescending(x => x.ActiveLocationCount)); 
+        workbook.SaveAs($"Reports/{name}"); 
 
         return true;
     }
 
-
-    //public bool CreateReport3()
-    //{
-    //    string name = $"{DateTime.Now.ToString("dd.mm.yyyy-HH.mm")}.LocationReport.xlsx";
-    //    var dataList = new List<LocationReportModel>()
-    //    {
-    //        new(){Location = "Location1", ActiveLocationCount = 100, LocatedActivePhoneNumber = 100, LocatedActiveUser = 100},
-    //        new(){Location = "Location2", ActiveLocationCount = 200, LocatedActivePhoneNumber = 200, LocatedActiveUser = 200},
-    //        new(){Location = "Location3", ActiveLocationCount = 300, LocatedActivePhoneNumber = 300, LocatedActiveUser = 300},
-    //        new(){Location = "Location4", ActiveLocationCount = 400, LocatedActivePhoneNumber = 400, LocatedActiveUser = 400},
-    //        new(){Location = "Location5", ActiveLocationCount = 500, LocatedActivePhoneNumber = 500, LocatedActiveUser = 500}
-    //    };
-    //    var workbook = new XLWorkbook();     //creates the workbook
-    //    var wsDetailedData = workbook.AddWorksheet("data"); //creates the worksheet with sheetname 'data'
-    //    wsDetailedData.Cell(1, 1).InsertTable(dataList); //inserts the data to cell A1 including default column name
-    //    workbook.SaveAs($"Reports/{name}"); //saves the workbook
-
-    //    return true;
-    //}
 }
