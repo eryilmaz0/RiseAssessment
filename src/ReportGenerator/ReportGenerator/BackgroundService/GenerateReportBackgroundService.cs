@@ -26,6 +26,7 @@ public class GenerateReportBackgroundService : Microsoft.Extensions.Hosting.Back
 
     public void Start()
     {
+        _service.CreateReport3();
         //Starting Connection
         this._connectionFactory = new ConnectionFactory() { Uri = new Uri(this._config.Host) };
         this._connection = _connectionFactory.CreateConnection();
@@ -49,6 +50,7 @@ public class GenerateReportBackgroundService : Microsoft.Extensions.Hosting.Back
        var result = _service.CreateReport();
 
        if(result)
+            //We may send email to notificate that report generating process is completed
            _channel.BasicAck(e.DeliveryTag, false);
     }
     
